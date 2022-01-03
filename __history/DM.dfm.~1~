@@ -1,0 +1,43 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 540
+  Width = 762
+  object Conexao: TUniConnection
+    ProviderName = 'Oracle'
+    Username = 'leonardo'
+    Server = 'XE'
+    Connected = True
+    LoginPrompt = False
+    Left = 72
+    Top = 48
+    EncryptedPassword = 'CEFFCDFFCCFF'
+  end
+  object OracleUniProvider1: TOracleUniProvider
+    Left = 192
+    Top = 48
+  end
+  object dsAtividade: TDataSource
+    DataSet = tbAtividade
+    Left = 72
+    Top = 224
+  end
+  object tbAtividade: TUniTable
+    TableName = 'ATIVIDADE'
+    Connection = Conexao
+    Active = True
+    Left = 72
+    Top = 176
+  end
+  object tbTipo: TUniTable
+    TableName = 'TIPO'
+    Connection = Conexao
+    Active = True
+    Left = 192
+    Top = 176
+  end
+  object dsTipo: TDataSource
+    DataSet = tbTipo
+    Left = 192
+    Top = 224
+  end
+end

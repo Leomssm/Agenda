@@ -1,0 +1,18 @@
+program Agenda;
+
+uses
+  Vcl.Forms,
+  unitPrincipal in 'unitPrincipal.pas' {formPrincipal},
+  unitTipo in 'unitTipo.pas' {formTipo},
+  unitPrioridade in 'unitPrioridade.pas' {formPrioridade};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TformPrincipal, formPrincipal);
+  Application.CreateForm(TformTipo, formTipo);
+  Application.CreateForm(TformPrioridade, formPrioridade);
+  Application.Run;
+end.

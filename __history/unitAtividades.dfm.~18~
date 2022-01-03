@@ -1,0 +1,162 @@
+object formAtividade: TformAtividade
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Atividades'
+  ClientHeight = 524
+  ClientWidth = 764
+  Color = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label2: TLabel
+    Left = 24
+    Top = 85
+    Width = 50
+    Height = 13
+    Caption = 'Descri'#231#227'o:'
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 764
+    Height = 81
+    Align = alTop
+    ParentBackground = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 256
+      Top = 29
+      Width = 218
+      Height = 25
+      Caption = 'Cadastro de Atividades'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -21
+      Font.Name = 'Roboto'
+      Font.Style = []
+      ParentFont = False
+    end
+  end
+  object DBMemo1: TDBMemo
+    Left = 24
+    Top = 104
+    Width = 721
+    Height = 89
+    DataField = 'DESCRICAO'
+    DataSource = DataModule1.dsAtividade
+    Enabled = False
+    MaxLength = 250
+    ScrollBars = ssVertical
+    TabOrder = 1
+  end
+  object Panel2: TPanel
+    Left = 24
+    Top = 216
+    Width = 337
+    Height = 81
+    TabOrder = 2
+    object Label3: TLabel
+      Left = 8
+      Top = 24
+      Width = 24
+      Height = 13
+      Caption = 'Tipo:'
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 64
+      Top = 24
+      Width = 225
+      Height = 21
+      DataField = 'TIPO'
+      DataSource = DataModule1.dsAtividade
+      Enabled = False
+      KeyField = 'TIPO_COD'
+      ListField = 'TIPO_DESCRICAO'
+      ListSource = DataModule1.dsTipo
+      TabOrder = 0
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 24
+    Top = 344
+    Width = 721
+    Height = 161
+    DataSource = DataModule1.dsAtividade
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ReadOnly = True
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'DESCRICAO'
+        Visible = True
+      end>
+  end
+  object DBRadioGroup1: TDBRadioGroup
+    Left = 408
+    Top = 216
+    Width = 337
+    Height = 81
+    Caption = 'Prioridade:'
+    DataField = 'PRIORIDADE'
+    DataSource = DataModule1.dsAtividade
+    Enabled = False
+    TabOrder = 4
+  end
+  object RadioButton1: TRadioButton
+    Left = 424
+    Top = 249
+    Width = 89
+    Height = 17
+    Caption = 'Urgente'
+    TabOrder = 5
+  end
+  object RadioButton2: TRadioButton
+    Left = 528
+    Top = 249
+    Width = 89
+    Height = 17
+    Caption = 'Importante'
+    TabOrder = 6
+  end
+  object RadioButton3: TRadioButton
+    Left = 640
+    Top = 249
+    Width = 89
+    Height = 17
+    Caption = 'Circunstancial'
+    TabOrder = 7
+  end
+  object BitBtn1: TBitBtn
+    Left = 264
+    Top = 303
+    Width = 97
+    Height = 25
+    Caption = 'Novo'
+    TabOrder = 8
+    OnClick = BitBtn1Click
+  end
+  object BitBtn2: TBitBtn
+    Left = 408
+    Top = 303
+    Width = 97
+    Height = 25
+    Caption = 'Salvar'
+    Enabled = False
+    TabOrder = 9
+    OnClick = BitBtn2Click
+  end
+end

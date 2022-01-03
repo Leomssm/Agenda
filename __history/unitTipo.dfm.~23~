@@ -1,0 +1,111 @@
+object formTipo: TformTipo
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Cadastro de Tipo'
+  ClientHeight = 470
+  ClientWidth = 755
+  Color = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 755
+    Height = 89
+    Align = alTop
+    ParentBackground = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 232
+      Top = 39
+      Width = 237
+      Height = 23
+      Caption = 'Cadastrar Tipo de Atividade'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Roboto'
+      Font.Style = []
+      ParentFont = False
+    end
+  end
+  object Button1: TButton
+    Left = 232
+    Top = 155
+    Width = 89
+    Height = 25
+    Caption = 'Novo'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object DBEdit1: TDBEdit
+    Left = 232
+    Top = 112
+    Width = 237
+    Height = 21
+    Cursor = crIBeam
+    DataField = 'TIPO_DESCRICAO'
+    DataSource = DataModule1.dsTipo
+    Enabled = False
+    TabOrder = 2
+  end
+  object DBGrid1: TDBGrid
+    Left = 72
+    Top = 208
+    Width = 609
+    Height = 193
+    DataSource = DataModule1.dsTipo
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'TIPO_DESCRICAO'
+        Title.Alignment = taCenter
+        Title.Caption = 'DESCRI'#199#195'O DO TIPO'
+        Visible = True
+      end>
+  end
+  object Button2: TButton
+    Left = 384
+    Top = 155
+    Width = 85
+    Height = 25
+    Caption = 'Salvar'
+    TabOrder = 4
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 592
+    Top = 155
+    Width = 89
+    Height = 25
+    Caption = 'Remover'
+    TabOrder = 5
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 72
+    Top = 155
+    Width = 89
+    Height = 25
+    Caption = 'Alterar'
+    TabOrder = 6
+    OnClick = Button4Click
+  end
+end
